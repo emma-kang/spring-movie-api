@@ -17,9 +17,9 @@ Author: Emma Kang
 * Relational Database: PostgreSQL
 * Development IDE: IntelliJ 
 
-To run application locally, Local database should be set up.  
-`docker run -d -p 5432:5432 --name movie_local -e POSTGRES_PASSWORD=localdb123 postgres`
-`psql -U postgres`
-`CREATE DATABASE movie_local`
+To run application locally, Local database should be set up.   
+`docker run -d -p 5432:5432 --name movie_local -e POSTGRES_PASSWORD=localdb123 postgres`  
+`psql -U postgres`  
+`CREATE DATABASE movie_local`  
 
 
