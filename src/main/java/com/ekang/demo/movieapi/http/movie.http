@@ -1,0 +1,36 @@
+###
+GET http://localhost:8080/api/movie/all
+
+###
+GET http://localhost:8080/api/movie/1
+
+###
+GET http://localhost:8080/api/movie/search?title="Incept"
+
+###
+POST http://localhost:8080/api/movie/new-movie
+Content-Type: application/json
+
+{
+"title": "TEST2",
+"description": "test desc",
+"release_year": "2022",
+"duration": "2h 10m",
+"rating": 7
+}
+
+###
+PUT http://localhost:8080/api/movie/update-movie
+Content-Type: application/json
+
+{
+"id": 15,
+"title": "EDIT TITLE",
+"description": "test desc",
+"release_year": "2021",
+"duration": "2h 10m",
+"rating": 7
+}
+
+###
+DELETE http://localhost:8080/api/movie/13
