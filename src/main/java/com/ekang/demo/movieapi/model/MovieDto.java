@@ -17,9 +17,11 @@ public class MovieDto {
     @NotEmpty
     private String title;
     private String description;
-    private String release_year;
+    private String releaseYear;
     private String duration;
     private Double rating;
+    private Integer likeCount;
+    private Integer dislikeCount;
 
     public static MovieDto createInstance(Movie movie) {
         MovieDto movieDto = new MovieDto();
@@ -29,9 +31,11 @@ public class MovieDto {
         movieDto.id = movie.getId();
         movieDto.title = movie.getTitle();
         movieDto.description = movie.getDescription();
-        movieDto.release_year = movie.getRelease_year();
+        movieDto.releaseYear = movie.getReleaseYear();
         movieDto.duration = movie.getDuration();
         movieDto.rating = movie.getRating();
+        movieDto.likeCount = movie.getLikeCount();
+        movieDto.dislikeCount = movie.getDislikeCount();
 
         return movieDto;
     }

@@ -28,9 +28,9 @@ public class MovieController {
         }
     }
 
-    // need to fix
+    // It is not working correctly, should investigate why the query cannot return result
     @GetMapping("/search")
-    public ResponseEntity<?> getMovieByTitle(@RequestParam String title) {
+    public ResponseEntity<?> getMovieByTitle(@RequestParam(required = false) String title) {
         try {
             return ResponseEntity.ok(movieService.getMovieByTitle(title));
         } catch (Exception e) {
@@ -43,6 +43,16 @@ public class MovieController {
     public ResponseEntity<?> getMovieById(@PathVariable Integer id) {
         try {
             return ResponseEntity.ok(movieService.getMovieById(id));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+    @PutMapping("/reactions")
+    public ResponseEntity<?> likeMovie(@RequestParam Integer id, @RequestParam Boolean isLike) {
+        try {
+            return ResponseEntity.ok(movieService.updateReactions(id, isLike));
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.badRequest().build();
