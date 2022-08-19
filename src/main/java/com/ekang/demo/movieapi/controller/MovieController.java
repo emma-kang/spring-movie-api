@@ -5,12 +5,10 @@ import com.ekang.demo.movieapi.service.MovieService;
 import com.ekang.demo.movieapi.util.MessageUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.xml.ws.Response;
 
 @Slf4j
 @RestController
