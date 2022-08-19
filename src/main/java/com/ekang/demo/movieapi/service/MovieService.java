@@ -26,7 +26,20 @@ public class MovieService {
     }
 
     public List<Movie> getMovieByTitle(String title) {
-        return movieRepository.findByTitleKeyword(title);
+        return movieRepository.findAllByTitleContainingIgnoreCaseOrderById(title);
+    }
+
+    @Transactional
+    public Movie updateReactions(Integer id, Boolean isLike) {
+        Movie movie = movieRepository.findById(id).orElseThrow();
+        MovieDto movieDto = MovieDto.createInstance(movie);
+
+        movieDto.setLikeCount(isLike ? movieDto.getLikeCount()+1
+                : (movieDto.getLikeCount() <= 0 ? 0 : movieDto.getLikeCount()-1));
+        movieDto.setDislikeCount(isLike ? (movieDto.getDislikeCount() <= 0 ? 0 : movieDto.getDislikeCount()-1)
+                : movieDto.getDislikeCount() +1);
+        movie.updateMovie(movieDto);
+        return movie;
     }
 
     @Transactional

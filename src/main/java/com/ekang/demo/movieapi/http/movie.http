@@ -1,36 +1,39 @@
-###
+### GET /all
 GET http://localhost:8080/api/movie/all
 
-###
+### GET /{id}
 GET http://localhost:8080/api/movie/1
 
-###
-GET http://localhost:8080/api/movie/search?title="Incept"
+### GET /search?title={title}
+GET http://localhost:8080/api/movie/search?title="Inception"
 
-###
+### PUT /reactions?id={id}&isLike={isLike}
+PUT http://localhost:8080/api/movie/reactions?id=1&isLike=true
+
+### POST /new-movie
 POST http://localhost:8080/api/movie/new-movie
 Content-Type: application/json
 
 {
-"title": "TEST2",
-"description": "test desc",
-"release_year": "2022",
-"duration": "2h 10m",
-"rating": 7
+    "title": "TEST2",
+    "description": "test desc",
+    "release_year": "2022",
+    "duration": "2h 10m",
+    "rating": 7
 }
 
-###
+### PUT /update-movie
 PUT http://localhost:8080/api/movie/update-movie
 Content-Type: application/json
 
 {
-"id": 15,
-"title": "EDIT TITLE",
-"description": "test desc",
-"release_year": "2021",
-"duration": "2h 10m",
-"rating": 7
+    "id": 12,
+    "title": "EDIT TITLE",
+    "description": "test desc",
+    "release_year": "2021",
+    "duration": "2h 10m",
+    "rating": 7
 }
 
-###
+### DELETE /{id}
 DELETE http://localhost:8080/api/movie/13
