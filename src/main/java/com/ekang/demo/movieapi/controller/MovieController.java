@@ -28,9 +28,8 @@ public class MovieController {
         }
     }
 
-    // It is not working correctly, should investigate why the query cannot return result
     @GetMapping("/search")
-    public ResponseEntity<?> getMovieByTitle(@RequestParam(required = false) String title) {
+    public ResponseEntity<?> getMovieByKeyword(@RequestParam String title) {
         try {
             return ResponseEntity.ok(movieService.getMovieByTitle(title));
         } catch (Exception e) {
