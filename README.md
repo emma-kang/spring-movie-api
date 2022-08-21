@@ -5,7 +5,7 @@ Author: Emma Kang
 ## Requirement
 * REST or GraphQL
 * Support to create,read,update,and delete movies
-* Support to search movies by title (In Progress)
+* Support to search movies by title
 * Support to anonymously like/dislike a movie
 * Each movie supports title,description,release year,duration,rating
 * Integration with SQL based database
